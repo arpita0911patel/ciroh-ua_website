@@ -7,29 +7,73 @@ import styles from "./styles.module.css";
 // Initialize Font Awesome library
 // library.add(fab);
 
-const FeatureList = [
-];
+const FeatureList = [];
 
 const MemberList = [
-  "The University of Alabama",
-  "Brigham Young University",
-  "Colorado School of Mines",
-  "Tuskegee University",
-  "The University of Alabama in Huntsville",
-  "University of Arizona",
-  "University of California San Diego",
-  "Scripps Institution of Oceanography",
-  "University of Hawai‘i at Mānoa",
-  "University of Iowa",
-  "University of Minnesota",
-  "Twin Cities",
-  "University of Saskatchewan",
-  "University of Utah",
-  "University of Vermont",
-  "Utah State University",
+  {
+    name: "The University of Alabama",
+    logo: "https://brand.ua.edu/wp-content/themes/ua-theme/assets/img/ua-square-logo.png",
+  },
+  {
+    name: "Utah State University",
+    logo: "https://www.usu.edu/brand/toolkit/logo-library/images/athletics/INST_UState_AggieBlue_300Center.png",
+  },
+  {
+    name: "University of Iowa",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/Block-IOWA-GOLD-ffcd00-1024x512.png",
+  },
+  {
+    name: "Tuskegee University",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/tu_logo_OPTION-300x225.png",
+  },
+  {
+    name: "The University of Alabama in Huntsville",
+    logo: "https://www.uah.edu/images/administrative/communications/logo/uah-logo.svg",
+  },
+
+  {
+    name: "University of Arizona",
+    logo: "https://www.arizona.edu/sites/default/files/www_webheader-01.svg",
+  },
+
+  {
+    name: "University of California San Diego",
+    logo: "https://www.ucsd.edu/_resources/img/logo_UCSD.png",
+  },
+  {
+    name: "Brigham Young University",
+    logo: "https://brightspotcdn.byu.edu/e1/53/a51276944fd180271d6b46d74082/1-primary-200w.svg",
+  },
+
+  {
+    name: "University of Minnesota Twin Cities",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/UMN_M-wdmk-stack-D2D-maroon-blk-300x237.png",
+  },
+  {
+    name: "University of Saskatchewan",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/usask_usask_colour-300x67.png",
+  },
+
+  {
+    name: "University of Hawai‘i at Mānoa",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/bottom-300x151.png",
+  },
+  {
+    name: "University of Vermont",
+    logo: "https://www.uvm.edu/sites/all/themes/uvmbase/images/uvmlogo-dark.svg",
+  },
+  {
+    name: "Scripps Institution of Oceanography",
+    logo: "https://s2020.s3.amazonaws.com/media/logo-scripps-ucsd-dark.png",
+  },
+
+  {
+    name: "Colorado School of Mines",
+    logo: "https://brand.mines.edu/wp-content/uploads/sites/425/2023/04/Mines-Logo-150-years.png",
+  },
 ];
 
-const Member = ({ idx, name }) => (
+const Member = ({ idx, name, logo }) => (
   <div className="col col--4">
     <div className="avatar">
       <div className="avatar__intro">
@@ -38,8 +82,11 @@ const Member = ({ idx, name }) => (
           className="avatar__name"
           style={{ marginBottom: 15, paddingLeft: 15 }}
         >
-          {name}
-          
+          <img
+            src={logo}
+            alt={name}
+            style={{ maxWidth: "50%", maxHeight: "100px" }}
+          />
         </div>
       </div>
     </div>
@@ -49,15 +96,15 @@ const Member = ({ idx, name }) => (
 const Card = ({ title, image, description, link }) => (
   <div className="col col--4">
     <div className="card">
-      <div className="card__image" style={{ textAlign: 'center' }}>
+      <div className="card__image" style={{ textAlign: "center" }}>
         <img
           src={image}
           alt="Image alt text"
           title="Logo Title Text 1"
-          style={{width:'65%'}}
+          style={{ width: "65%" }}
         />
       </div>
-      <div className="card__header"  style={{ textAlign: 'center' }}>
+      <div className="card__header" style={{ textAlign: "center" }}>
         <h3>{title}</h3>
       </div>
       <div className="card__body">
@@ -109,14 +156,14 @@ export default function HomepageFeatures() {
                 alt="Logo"
               />
             </div>
-            <div style={{'padding-top':'5px', 'margin-left':'-175px'}}>
+            <div style={{ "padding-top": "5px", "margin-left": "-175px" }}>
               <strong>CONTRIBUTE</strong>
               <br />
               Are you finding value in our <strong>CIROH DocuHub</strong>{" "}
               website? Would you like to{" "}
               <strong>
-                contribute by adding product/project documentation, tutorials, training
-                data, conference presentations or more?
+                contribute by adding product/project documentation, tutorials,
+                training data, conference presentations or more?
               </strong>
               <span>
                 {" "}
@@ -139,7 +186,12 @@ export default function HomepageFeatures() {
               <br />
               <div className=" row">
                 {MemberList.map((member, idx) => (
-                  <Member key={idx} idx={idx} name={member} />
+                  <Member
+                    key={idx}
+                    idx={idx}
+                    name={member.name}
+                    logo={member.logo}
+                  />
                 ))}
               </div>
             </div>
@@ -161,7 +213,6 @@ export default function HomepageFeatures() {
             />
           </div>
         </div>
-        
       </div>
     </section>
   );
