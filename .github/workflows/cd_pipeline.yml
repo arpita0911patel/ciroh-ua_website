@@ -11,7 +11,11 @@ on:
     types:
       - completed
   workflow_call:
-
+  # push:
+  #   branches:
+  #     - main  # Trigger on pushes to the main branch
+  # workflow_dispatch:  # Allows manual triggering
+  
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -62,7 +66,7 @@ jobs:
           git checkout -b temp-deploy-branch-$VERSION
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.4.0
+        uses: JamesIves/github-pages-deploy-action@v4.6.1
         with:
           token: ${{ secrets.SECRET_TO_PUSH_TO_CIROH_GITHUB_IO }}
           branch: main

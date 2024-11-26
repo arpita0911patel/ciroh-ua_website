@@ -1,4 +1,177 @@
 {
+	"September 2024 Update":  [ 
+		{
+			"type": "news",
+			"title": "Best Practice Guide for NextGen Framework",
+			"description": "Technical guidance for the inclusion of models/modules in the NextGen Water Resources Modeling Framework is now available in DocuHub.",
+			"link": "https://docs.ciroh.org/docs/policies/NextGen/"
+		},  
+		{
+			"type": "update",
+			"title": "NextGen Model Framework (NOAA-OWP/ngen)",
+			"description": "2 PRs merged in September. Explore more updates here.",
+			"link": "https://github.com/NOAA-OWP/ngen/commits/master/?since=2024-09-01&until=2024-09-26"
+		},     
+		{
+			"type": "update",
+			"title": "T-route (NOAA-OWP/t-route)",
+			"description": "4 PRs were merged in September.",
+			"link": "https://github.com/NOAA-OWP/t-route/commits/master/?since=2024-09-01&until=2024-09-26"
+		},
+		{
+			"type": "news",
+			"title": "NextGen Community Office Hours",
+			"description": "We are excited to invite you to join our NextGen Community Office Hours. It is an excellent opportunity for everyone to stay up to date with the latest developments in hydrologic modeling at CIROH. Join us to engage with the team and learn more about ongoing projects and advancements.",
+			"link": "https://docs.ciroh.org/docs/products/Community%20Hydrologic%20Modeling%20Framework/ngiabOfficeHours"
+		} , 
+		
+		{
+			"type": "feature",
+			"title": "NGIAB-CloudInfra : NGIAB Docker Image",
+			"description": "We are happy to announce that NGIAB version 1.2.1 has been released, available for both ARM and x86 architectures. This release is up to date with the latest ngen commit ID: f321889 and t-route commit ID: d0982a5. Learn more about the updates here.",
+			"link": "https://github.com/CIROH-UA/NGIAB-CloudInfra/releases/tag/v1.2.1"
+		} , 
+		{
+			"type": "update",
+			"title": "ngen-datastream",
+			"description": "In September, 10 pull requests were merged. ",
+			"link": "https://github.com/CIROH-UA/ngen-datastream/commits/main/?since=2024-09-01&until=2024-09-26"
+		},
+		{
+			"type": "update",
+			"title": "NGIAB-data-preprocess",
+			"description": "5 PRs were merged in September. ",
+			"link": "https://github.com/CIROH-UA/NGIAB_data_preprocess/commits/main/?since=2024-09-01&until=2024-09-26"
+		}
+	],
+	"August 2024 Update":  [  
+		{
+			"type": "update",
+			"title": "NextGen Model Framework (NOAA-OWP/ngen)",
+			"description": "Five PRs merged in August. Explore more updates here.",
+			"link": "https://github.com/NOAA-OWP/ngen/commits/master/?since=2024-08-01&until=2024-08-29"
+		},     
+		{
+			"type": "update",
+			"title": "T-route (NOAA-OWP/t-route)",
+			"description": "Eight PRs were merged in August.",
+			"link": "https://github.com/NOAA-OWP/t-route/commits/master/?since=2024-08-01&until=2024-08-29"
+		},
+		{
+			"type": "update",
+			"title": "NGIAB-CloudInfra : NGIAB Docker Image",
+			"description": "NGIAB version 1.2.0 has been released, available for both ARM and X86 architectures. This release is up to date with the latest ngen commit ID: 2ffedf8 and t-route commit ID: 9d9d711",
+			"link": "https://github.com/CIROH-UA/NGIAB-CloudInfra/commits/main/?since=2024-08-01&until=2024-08-29"
+		} , 
+		{
+			"type": "update",
+			"title": "NGIAB-HPCInfra: NGIAB Singularity Image",
+			"description": "In August, a new Singularity image was released for NGIAB-HPCInfra. Learn more about the updates here.",
+			"link": "https://github.com/CIROH-UA/NGIAB-HPCInfra/commits/main/?since=2024-08-01&until=2024-08-29"
+		},    
+		{
+			"type": "update",
+			"title": "ngen-datastream",
+			"description": "In August, nine pull requests were merged. These include the addition of the forcingprocessor feature, increased test coverage, updates to the research datastream Terraform, and new documentation.",
+			"link": "https://github.com/CIROH-UA/ngen-datastream/commits/main/?since=2024-08-01&until=2024-08-29"
+		},
+		{
+			"type": "update",
+			"title": "NGIAB-data-preprocess",
+			"description": "Five PRs were merged in August. We are excited to announce the new release v2.0.0! This release uses catchment ids in place of waterbody ids.",
+			"link": "https://github.com/CIROH-UA/NGIAB_data_preprocess/commits/main/?since=2024-08-01&until=2024-08-29"
+		}
+	],
+	"July 2024 Update":  [  
+		{
+			"type": "update",
+			"title": "NextGen Model Framework (ngen)",
+			"description": "Four PRs merged in July. Explore more updates here.",
+			"link": "https://github.com/NOAA-OWP/ngen"
+		},     
+		{
+			"type": "update",
+			"title": "NGIAB-CloudInfra",
+			"description": "In July, one PR was merged. We are preparing to present \"Advancing Hydrological Modeling: CIROH’s NextGen In A Box (NGIAB) and Enhanced Tools for Community-Driven Research\" at AGU24. You can find more updates here.", 
+			"link": "https://agu.confex.com/agu/agu24/prelim.cgi/Paper/1697622"
+		} ,     
+		{
+			"type": "update",
+			"title": "ngen-DataStream",
+			"description": "In July, 6 PRs were merged. We are also presenting \"NextGen National Water Model Framework Datastream\" paper at AGU24. More updates can be found here.",
+			"link": "https://agu.confex.com/agu/agu24/prelim.cgi/Paper/1589746"
+		},
+		{
+			"type": "update",
+			"title": "NGIAB-data-preprocessor",
+			"description": "Nine PRs were merged in July.",
+			"link": "https://github.com/AlabamaWaterInstitute/NGIAB_data_preprocess"
+		},
+		{
+			"type": "update",
+			"title": "T-route",
+			"description": "Five PRs were merged in July.",
+			"link": "https://github.com/NOAA-OWP/t-route"
+		}
+	],
+	"June 2024 Update":  [             
+		{
+			"type": "update",
+			"title": "ngen-DataStream",
+			"description": "In June, 9 PRs were merged. Ngen-datastream was updated to be compatible with the new hydrofabric data format provided by hfsubset version 2.1.1.",
+			"link": "https://github.com/CIROH-UA/ngen-datastream"
+		},
+		{
+			"type": "news",
+			"title": "NGIAB-data-preprocessor",
+			"description": "Four PRs were merged in June. We are happy to announce the new release v1.0.1. This release includes various improvements and bug fixes.",
+			"link": "https://github.com/AlabamaWaterInstitute/NGIAB_data_preprocess"
+		},  
+		{
+			"type": "feature",
+			"title": "NextGen Model Framework (ngen)",
+			"description": "Eleven PRs merged in June. Explore more updates here.",
+			"link": "https://github.com/NOAA-OWP/ngen"
+		},
+		{
+			"type": "news",
+			"title": "CIROH DevCon24 Conference Slides",
+			"description": "Access the slides from the 8 NextGen Track workshops held at CIROH DevCon24. Slides can be found here.",
+			"link": "https://docs.ciroh.org/docs/education/Conferences/#ciroh-developers-conference---may-2024"
+		}
+	],
+	"May 2024 Update":  [     
+		{
+			"type": "news",
+			"title": "NGIAB-CloudInfra",
+			"description": "The NextGen In A Box (NGIAB) workshop last week at CIROH DevCon24 was a huge success. New sample dataset is created “AWI-006”. We had 50+ attendees and most of them were successfully able to run NGIAB on their local machine. For those without the admin access, we provided them the AWS instances for the workshop. This workshop introduced a new geospatial visualization tool for visualizing outputs from NGIAB runs. During May, 16 PRs were merged. Slides can be found at:", 
+			"link": "https://github.com/CIROH-UA/Conferences/tree/main/CIROHDevCon2024/NextGenTrack"
+		},        
+		{
+			"type": "update",
+			"title": "NGIAB-HPCInfra",
+			"description": "Run NGIAB on HPC using NGIAB-HPCInfra. This repo is upgraded to use AWI-006 dataset. For more details, please refer README at",
+			"link": "https://github.com/CIROH-UA/NGIAB-HPCInfra"
+		},
+		{
+			"type": "news",
+			"title": "ngen-DataStream",
+			"description": "NextGen Simulation Development Tools workshop was a huge success. It provided attendees with a hands-on experience using the ngen-datastream tool. In May, 21 PRs were merged. Explore the updates. Slides for the DevCon can be found at:",
+			"link": "https://github.com/CIROH-UA/ngen-datastream"
+		},
+		{
+			"type": "news",
+			"title": "NGIAB-data-preprocessor",
+			"description": "The NextGen Simulation Development Tools workshop at CIROH DevCon24 showcased the tool's capabilites of simplifying data preparation for next-gen simulations.",
+			"link": "https://github.com/AlabamaWaterInstitute/NGIAB_data_preprocess"
+		},  
+		{
+			"type": "feature",
+			"title": "NextGen Model Framework (ngen)",
+			"description": "3 PRs merged in May. Explore more updates here.",
+			"link": "https://github.com/NOAA-OWP/ngen"
+		}
+	],
 	"April 2024 Update": [
 		{
 			"type": "news",
@@ -88,12 +261,12 @@
 			"type": "news",
 			"title": "NextGen In A Box (NGIAB)",
 			"description": "We have made some improvements to NGIAB: 10 PRs merged. Sample input data updated to use AWI_003(with new data provider names). Boost upgraded to v1.79. Self-hosted Runner can start and stop automatically with GitHub Actions. NGIAB image can run in auto mode. Geopackage support added. Documentation available at CIROH DocuHub",
-			"link": "https://docs.ciroh.org/docs/products/nextgeninaboxDocker, https://github.com/CIROH-UA/NGIAB-CloudInfra"
+			"link": "https://docs.ciroh.org/docs/products/Hydrologic%20Modeling%20Framework/nextgeninaboxDocker/, https://github.com/CIROH-UA/NGIAB-CloudInfra"
 		},
 		{
 			"type": "feature",
 			"title": "ngen-DataStream",
-			"description": "3 PRs merged in January. Documentation available at: /products/nextgeninaboxDocker/nextgenDatastream",
+			"description": "3 PRs merged in January. Documentation available at: /products/Hydrologic%20Modeling%20Framework/nextgenDatastream/",
 			"link": "https://github.com/CIROH-UA/ngen-datastream"
 		},
 		{

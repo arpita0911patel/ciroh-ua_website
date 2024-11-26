@@ -21,9 +21,11 @@ CIROH, in collaboration with 2i2c, offers a dedicated JupyterHub environment on 
 -----
 ### How to get access to these environments?
 
-Submit the form below to get access to the CIROH JupyterHub environments:
+CIROH JupyterHub provides both CPU and GPU capabilities. Please submit the form below to get access to the CIROH JupyterHub environments:
 
-<a class="button button--active button--primary" href="https://forms.office.com/Pages/ResponsePage.aspx?id=jnIAKtDwtECk6M5DPz-8p4IIpHdEnmhNgjOa9FjrwGtUNUoyV1UxNFIzV1AyTDhTNzdOT1Q5NVlLTC4u"> JupyterHub (2i2c) Infrastructure Request Form</a>
+<a class="button button--active button--primary" style={{'margin-bottom':'1.3rem', 'margin-right':'1.4rem'}} href="https://forms.office.com/Pages/ResponsePage.aspx?id=jnIAKtDwtECk6M5DPz-8p4IIpHdEnmhNgjOa9FjrwGtUNUoyV1UxNFIzV1AyTDhTNzdOT1Q5NVlLTC4u"> JupyterHub (2i2c) CPU Access Request Form</a>
+<a class="button button--active button--primary" style={{'margin-bottom':'1.3rem'}}  href="https://forms.office.com/r/mkrVJzyg9u"> JupyterHub (2i2c) GPU Access Request Form</a>
+
 ---
 :::note
 You will need to submit GitHub username for this request. 
@@ -38,18 +40,31 @@ Please refer [Dockerfile file](https://github.com/2i2c-org/awi-ciroh-image/blob/
 If your software in not listed in this file, please submit the form below to request new software installation on 2i2c JupyterHub.
 
 <a class="button button--active button--primary" href="https://forms.office.com/Pages/ResponsePage.aspx?id=jnIAKtDwtECk6M5DPz-8p4IIpHdEnmhNgjOa9FjrwGtUNUoyV1UxNFIzV1AyTDhTNzdOT1Q5NVlLTC4u"> JupyterHub (2i2c) Software Install Form</a>
+
+
 ---
 
 ### CIROH JupyterHub Environments:
 
 Click on below button to access the CIROH JupyterHub environments (production and staging environments):
+
+<a class="button button--active button--primary " style={{'margin-bottom':'1.3rem', 'margin-right':'1.4rem'}}  href="https://ciroh.awi.2i2c.cloud/hub/login"> CIROH Production JupyterHub</a>
+
+<a class="button button--active button--primary " style={{'margin-bottom':'1.3rem'}} href="https://staging.ciroh.awi.2i2c.cloud/hub/login"> CIROH Staging JupyterHub</a>
+
+-----
+
 :::note
 Please remember to stop the server when you're not actively using it
 :::
 
-<a class="button button--active button--primary" href="https://ciroh.awi.2i2c.cloud/hub/login"> CIROH Production JupyterHub</a>
 
-<a class="button button--active button--primary" href="https://staging.ciroh.awi.2i2c.cloud/hub/login"> CIROH Staging JupyterHub</a>
+import VideoPlayer from '/src/components/VideoPlayer.js';
+
+
+<VideoPlayer url="https://youtu.be/VSFs2bu4-74"  />
+
+
 
 _____
 
@@ -87,37 +102,3 @@ _____
 
 This reworded version emphasizes the collaboration between CIROH and 2i2c, highlights the benefits specifically for hydrological researchers, and clarifies the role of Google Cloud.
 
-
-### 2i2c JupyterHub details:
-
-:::info
-[2i2c JupyterHub](https://2i2c.org/)
-:::
-
-### 2i2c JupyterHub Documentation and Tutorials:
-
-:::info
-[2i2c Docs](https://docs.2i2c.org/)
-:::
-
-### 2i2c JupyterHub Infrastructure Documentation:
-
-:::info
-[2i2c Infrastructure Docs](https://infrastructure.2i2c.org/)
-:::
-
-### awi-ciroh-image repository on 2i2c GitHub:
-
-:::info
-[Github URL for AWI-CIROH 2i2c Hub Image](https://github.com/2i2c-org/awi-ciroh-image)
-:::
-
-:::note
-For any other questions, please email us at **ciroh-it-admin@ua.edu** with detailed information.
-:::
-
-------------------------------------------------
-
-import DocCardList from '@theme/DocCardList';
-
-<DocCardList />

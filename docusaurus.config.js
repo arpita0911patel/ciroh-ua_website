@@ -28,12 +28,11 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        blog: {
-          blogTitle: "DocuHub blog!",
-          blogDescription: "A DocuHub powered blog!",
-          postsPerPage: "ALL",
-          authorsMapPath: "blog/authors.yaml",
+        gtag: {
+          trackingID: 'G-TQW7CE7E2P',
+          anonymizeIP: true,
         },
+        blog: false,
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
@@ -46,15 +45,40 @@ const config = {
       }),
     ],
   ],
-// plugins: ["docusaurus-plugin-search-local"],
-//    search: {
-//      index: ["docs"],
-//      numberShown: 5,
-//      language: "en",
-//    },
+
+  plugins: [
+    // Lunr Search Plugin for search functionality
+    [
+      require.resolve('docusaurus-lunr-search'), 
+      {
+        languages: ['en'], // language codes for search
+      }
+    ],
+    
+    // Draw.io Plugin for embedding diagrams
+    ['drawio', {}],
+    
+    // Custom Blog Plugin
+    [
+      './plugins/plugin-content-blog.js', 
+      {
+        blogTitle: "DocuHub blog!",
+        blogDescription: "A DocuHub powered blog!",
+        postsPerPage: "ALL", // Display all posts on a single page
+        authorsMapPath: "blog/authors.yaml", // Path to the authors' mapping file
+      }
+    ]
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    (
+      {
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      },
       docs: {
         sidebar: {
           autoCollapseCategories: false,
@@ -97,52 +121,75 @@ const config = {
             position: "left",
             label: "Policies and Best Practices",
           },
+          
           {
-            href: "/docs/products/nextgeninaboxDocker/news",
+            href: "/impact",
+            label: "Community Impact",
+            position: "left",
+          },
+          {
+            href: "/news",
             label: "News",
             position: "right",
           },
           {
-            href: "/contribute",
-            label: "Contribute",
+            href: "https://forms.office.com/r/5ww7qRWwwf",
+            label: "Feedback",
             position: "right",
-          },
-          
+          }
         ],
       },
       footer: {
         style: "dark",
         links: [
           {
-            title: "Docs",
+            title: 'Quick Links',
             items: [
               {
-                label: "About CIROH",
-                href: "https://ciroh.ua.edu/about/",
+                label: 'Education',
+                href: '/docs/education/'
               },
               {
-                label: "CIROH Members and Partners",
-                href: "https://ciroh.ua.edu/about/ciroh-partners/",
+                label: 'Contact Us',
+                href: '/contact'
               },
               {
-                label: "Contact CIROH",
-                href: "https://ciroh.ua.edu/contact-us/",
+                label: 'Contribute',
+                href: '/contribute'
               },
               {
-                label: "DocuHub Repo",
-                href: "https://github.com/CIROH-UA/ciroh-ua_website",
+                label: 'CIROH Portal',
+                href: 'http://portal.ciroh.org/'
+              }
+            ]
+          },
+          {
+            title: 'About CIROH',
+            items: [
+              {
+                label: 'About Us',
+                href: 'https://ciroh.ua.edu/about/'
               },
               {
-                label: "CIROH Portal",
-                href: "http://portal.ciroh.org//",
+                label: 'Members & Partners',
+                href: 'https://ciroh.ua.edu/about/ciroh-partners/'
               },
-            ],
+              {
+                label: 'Contact CIROH',
+                href: 'https://ciroh.ua.edu/contact-us/'
+              },
+              {
+                label: 'DocuHub Repository',
+                href: 'https://github.com/CIROH-UA/ciroh-ua_website'
+              }
+            ]
           },
           {
             title: "Follow us on",
             items: [
               {
                 html: `
+                <div class="footer-social-links">
                 <a href="https://www.youtube.com/@UA_CIROH" target="_blank" rel="noreferrer noopener" aria-label="Visit CIROH" style="margin-left:-15px">
                 <img src="https://static.vecteezy.com/system/resources/previews/018/930/572/non_2x/youtube-logo-youtube-icon-transparent-free-png.png" alt="CIROH on YouTube" width="70" height="60" />
               </a>
@@ -152,7 +199,7 @@ const config = {
               <a href="https://www.facebook.com/UACIROH/" target="_blank" rel="noreferrer noopener" aria-label="Visit CIROH"  style="margin-left:-25px">
                 <img src="https://static.vecteezy.com/system/resources/previews/018/930/702/original/facebook-logo-facebook-icon-transparent-free-png.png" alt="CIROH on Facebook" width="70" height="60" />
               </a> 
-                  
+              </div>
                 `,
               },
               {
@@ -169,13 +216,21 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} CIROH - The University of Alabama`,
+        copyright: `<div class="footer__funding">
+        This project received funding under award NA22NWS4320003 from NOAA Cooperative Institute Program. 
+        The statements, findings, conclusions, and recommendations are those of the author(s) and do not 
+        necessarily reflect the views of NOAA.
+      </div>
+      <div class="footer__bottom">
+        Copyright © ${new Date().getFullYear()} CIROH - The University of Alabama
+      </div>`,
       },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
     }),
+    
 };
 
 module.exports = config;
