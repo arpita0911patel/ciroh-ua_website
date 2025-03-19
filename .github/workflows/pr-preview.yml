@@ -1,0 +1,83 @@
+name: PR Preview with CodeSandbox
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  validate-and-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Validate build
+        run: npm run build
+        
+      - name: Generate CodeSandbox link
+        id: generate-link
+        run: |
+          PR_BRANCH="${{ github.head_ref }}"
+          REPO_OWNER="${{ github.repository_owner }}"
+          REPO_NAME="${{ github.event.repository.name }}"
+          SANDBOX_URL="https://codesandbox.io/p/github/${REPO_OWNER}/${REPO_NAME}/tree/${PR_BRANCH}"
+          echo "SANDBOX_URL=${SANDBOX_URL}" >> $GITHUB_ENV
+        
+      - name: Add or update comment with preview link
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo, number } = context.issue;
+            
+            // Search for existing comment
+            const { data: comments } = await github.rest.issues.listComments({
+              owner,
+              repo,
+              issue_number: number,
+            });
+            
+            const commentMarker = '<!-- PR-CODESANDBOX-PREVIEW -->';
+            const existingComment = comments.find(comment => comment.body.includes(commentMarker));
+            
+            const commentBody = `${commentMarker}
+            ## 🔍 PR Preview Available
+            
+            This PR has been validated and a preview environment is ready for review:
+            
+            [![Open in CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](${process.env.SANDBOX_URL})
+            
+            ### Quick verification:
+            - ✅ Build validation passed
+            - 🔗 Preview link: [View in CodeSandbox](${process.env.SANDBOX_URL})
+            
+            Preview will update automatically when new commits are pushed to this PR.`;
+            
+            if (existingComment) {
+              // Update existing comment
+              await github.rest.issues.updateComment({
+                owner,
+                repo,
+                comment_id: existingComment.id,
+                body: commentBody
+              });
+            } else {
+              // Create new comment
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: number,
+                body: commentBody
+              });
+            }
