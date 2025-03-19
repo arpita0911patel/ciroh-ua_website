@@ -31,7 +31,7 @@ jobs:
           PR_BRANCH="${{ github.head_ref }}"
           REPO_OWNER="${{ github.repository_owner }}"
           REPO_NAME="${{ github.event.repository.name }}"
-          SANDBOX_URL="https://codesandbox.io/p/github/${REPO_OWNER}/${REPO_NAME}/tree/${PR_BRANCH}"
+          SANDBOX_URL="https://codesandbox.io/p/github/${REPO_OWNER}/${REPO_NAME}/${PR_BRANCH}"
           echo "SANDBOX_URL=${SANDBOX_URL}" >> $GITHUB_ENV
         
       - name: Add or update comment with preview link
